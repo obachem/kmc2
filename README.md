@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.322785.svg)](https://doi.org/10.5281/zenodo.322785)
+
 Fast and Provably Good Seedings for k-Means using k-MC^2 and AFK-MC^2
 ===
 
