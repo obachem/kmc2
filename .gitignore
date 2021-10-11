@@ -60,3 +60,6 @@ target/
 
 # Exclude kmcmc cython compilation
 kmcmc.html
+
+# Exclude generated .c file
+kmc2.c

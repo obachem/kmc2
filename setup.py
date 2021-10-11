@@ -22,8 +22,13 @@
 # import numpy as np
 import numpy as np
 from setuptools import setup, Extension
+import Cython
+from Cython.Build import cythonize
 
-module1 = Extension('kmc2', sources=['kmc2.c'], extra_compile_args=['-O3'])
+module1 = Extension('kmc2', sources=['kmc2.pyx'],
+                    extra_compile_args=['-O3'],
+                    include_dirs=[".", np.get_include()],
+                    language_level="3")
 setup(
     name='kmc2',
     version='0.1',
@@ -41,5 +46,8 @@ setup(
     ],
     keywords='machine learning clustering kmeans',
     install_requires=["numpy", "scipy", "scikit-learn", "nose"],
-    ext_modules=[module1],
-    include_dirs=[".",np.get_include() ])
+    #ext_modules=[module1],
+    ext_modules=cythonize(module1)
+)
+
+
